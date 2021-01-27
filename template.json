@@ -1,0 +1,19 @@
+{
+    "templateName": "testTemplate",
+    "templateType": "reactFunctional",
+    "template": [
+        {
+            "component": "Navbar",
+            "arguments": [
+                {
+                    "className": "test"
+                }
+            ],
+            "children": [
+                {
+                    "name": "Nav"
+                }
+            ]
+        }
+    ]
+}
