@@ -8,9 +8,18 @@ template = {
     "templateName" : "testTemplate",
     "templateType" : "reactFunctional",
     "template" : [{
-        "component": "Navbar",
+        "component": "TopNav",
         "arguments": [{
             "className" : "test"
+        }],
+        "children": [{
+            "name" : "Nav"
+        }]
+    },
+    {
+        "component": "BotNav",
+        "arguments": [{
+            "className" : "test2"
         }],
         "children": [{
             "name" : "Nav"

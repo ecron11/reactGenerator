@@ -3,10 +3,23 @@
     "templateType": "reactFunctional",
     "template": [
         {
-            "component": "Navbar",
+            "component": "TopNav",
             "arguments": [
                 {
                     "className": "test"
+                }
+            ],
+            "children": [
+                {
+                    "name": "Nav"
+                }
+            ]
+        },
+        {
+            "component": "Butts",
+            "arguments": [
+                {
+                    "className": "test2"
                 }
             ],
             "children": [
