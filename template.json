@@ -14,19 +14,6 @@
                     "name": "Nav"
                 }
             ]
-        },
-        {
-            "component": "BotNav",
-            "arguments":
-                {
-                    "className": "test2",
-                    "id": "bottom-nav"
-                },
-            "children": [
-                {
-                    "name": "Nav"
-                }
-            ]
         }
     ]
 }

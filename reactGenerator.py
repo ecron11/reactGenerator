@@ -18,20 +18,26 @@ if template["templateType"] == "reactFunctional":
     outputFile.write("export default function " + template["templateName"] + "(props) { \n")
     
     currentIndent += 1
+    
     outputFile.write(currentIndent*indentCharacter + "return (\n")
     currentIndent += 1
+    
     for component in template['template']:
         outputFile.write(currentIndent*indentCharacter + "<" + component["component"] + "\n")
 
         currentIndent += 1
+        
         for arg in component["arguments"].keys():
             outputFile.write(currentIndent*indentCharacter + arg + "='" + component["arguments"][arg] + "'\n")
         currentIndent -= 1
+        
         outputFile.write(currentIndent*indentCharacter + ">\n")
+        
         outputFile.write(currentIndent*indentCharacter + "</" + component["component"] + ">\n")
     #closing parentheses and brackets
-    outputFile.write(currentIndent*indentCharacter + "\n)")
     currentIndent -= 1
-    outputFile.write(currentIndent*indentCharacter + "\n}")
+    outputFile.write(currentIndent*indentCharacter + ")\n")
+    currentIndent -= 1
+    outputFile.write(currentIndent*indentCharacter + " }")
 
 outputFile.close()
