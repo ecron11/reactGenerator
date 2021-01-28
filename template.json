@@ -4,11 +4,11 @@
     "template": [
         {
             "component": "TopNav",
-            "arguments": [
+            "arguments":
                 {
-                    "className": "test"
-                }
-            ],
+                    "className": "test",
+                    "id": "top-nav"
+                },
             "children": [
                 {
                     "name": "Nav"
@@ -16,12 +16,12 @@
             ]
         },
         {
-            "component": "Butts",
-            "arguments": [
+            "component": "BotNav",
+            "arguments":
                 {
-                    "className": "test2"
-                }
-            ],
+                    "className": "test2",
+                    "id": "bottom-nav"
+                },
             "children": [
                 {
                     "name": "Nav"
