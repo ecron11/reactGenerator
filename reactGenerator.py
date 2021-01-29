@@ -14,30 +14,33 @@ currentIndent = 0
 if template["templateType"] == "reactFunctional":
     # Need to add imports for any children react elements
 
-    outputFile.write("import React from 'react' \n\n")
-    outputFile.write("export default function " + template["templateName"] + "(props) { \n")
+    outputStr = ""
+
+    outputStr +=("import React from 'react' \n\n")
+    outputStr +=("export default function " + template["templateName"] + "(props) { \n")
     
     currentIndent += 1
     
-    outputFile.write(currentIndent*indentCharacter + "return (\n")
+    outputStr +=(currentIndent*indentCharacter + "return (\n")
     currentIndent += 1
     
     for component in template['template']:
-        outputFile.write(currentIndent*indentCharacter + "<" + component["component"] + "\n")
+        outputStr +=(currentIndent*indentCharacter + "<" + component["component"] + "\n")
 
         currentIndent += 1
         
         for arg in component["arguments"].keys():
-            outputFile.write(currentIndent*indentCharacter + arg + "='" + component["arguments"][arg] + "'\n")
+            outputStr +=(currentIndent*indentCharacter + arg + "='" + component["arguments"][arg] + "'\n")
         currentIndent -= 1
         
-        outputFile.write(currentIndent*indentCharacter + ">\n")
+        outputStr +=(currentIndent*indentCharacter + ">\n")
         
-        outputFile.write(currentIndent*indentCharacter + "</" + component["component"] + ">\n")
+        outputStr +=(currentIndent*indentCharacter + "</" + component["component"] + ">\n")
     #closing parentheses and brackets
     currentIndent -= 1
-    outputFile.write(currentIndent*indentCharacter + ")\n")
+    outputStr +=(currentIndent*indentCharacter + ")\n")
     currentIndent -= 1
-    outputFile.write(currentIndent*indentCharacter + " }")
+    outputStr +=(currentIndent*indentCharacter + " }")
 
+    outputFile.write(outputStr)
 outputFile.close()
